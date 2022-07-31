@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { editItem, fetchCompanies } from '../Redux/action';
+import { editItem } from '../Redux/action';
 
 const Edit = () => {
     const [name, setName] = useState("");
@@ -9,8 +9,6 @@ const Edit = () => {
     const dispatch = useDispatch();
     const {id} = useParams();
     const navigate = useNavigate();
-    //const companies = useSelector((store) => store.companies)
-    //const currentCompany = companies.find(company => company.id === parseInt(id))
     const handleSubmit = (e) => {
       e.preventDefault();
       const data = {

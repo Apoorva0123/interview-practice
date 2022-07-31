@@ -1,18 +1,5 @@
 import { actionType } from "./actionType";
 
-// const init = [
-//     {
-//         id: 0,
-//         name: 'Capgemini',
-//         role: 'Full Stack Developer'
-//     },
-//     {
-//         id: 1,
-//         name: 'Google',
-//         role: 'Front-end Developer'
-//     }
-// ];
-
 const init = {
     companyData: [],
     isError: false,
@@ -46,10 +33,21 @@ export const companyReducer = (state = init, { type, payload }) => {
               };
         case actionType.FETCH_COMPANY_DATA_SUCCESS:
             return {
-                ...state, // keep the old state
-                companyData: payload, // payload is the data from the server
-                isError: false, // reset error
-                isLoading: false, // reset loading
+                ...state, 
+                companyData: payload, 
+                isError: false, 
+                isLoading: false, 
+            }
+        case actionType.FETCH_COMPANY_DATA_FAILURE:
+            return{
+                ...state,
+                isError: payload,
+                isLoading: false
+            }
+        case actionType.FETCH_COMPANY_DATA_LOADING:
+            return{
+                ...state,
+                isLoading: true
             }
         default:
             return state;
