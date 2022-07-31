@@ -1,0 +1,19 @@
+{
+  "companies": [
+    {
+      "id": 0,
+      "name": "XBLR",
+      "role": "Full stack developer"
+    },
+    {
+      "id": 1,
+      "name": "Smart Foods",
+      "role": "Front end developer"
+    },
+    {
+      "name": "Infy",
+      "role": "dev",
+      "id": 2
+    }
+  ]
+}
